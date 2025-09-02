@@ -1,0 +1,29 @@
+const { encryptPassword } = require ('../util/password');
+const { users } = require('../repository/userRepository');
+const shortid = require('shortid');
+
+const createUser = async ({ username, password, role = "user" }) => {
+    const existingUser = users.some(u => u.username === username);
+    if (existingUser) {
+        throw new Error('Username already exists');
+    }
+
+    const hashedPassword = await encryptPassword(password); // use await if async
+
+    const newUser = {
+        id: shortid.generate(),
+        username,
+        password: hashedPassword, // keep as password
+        role,
+    };
+
+    users.push(newUser);
+
+    return {
+        id: newUser.id,
+        username: newUser.username,
+        role: newUser.role,
+    };
+};
+
+module.exports = { createUser };
