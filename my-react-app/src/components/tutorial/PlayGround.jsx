@@ -5,6 +5,10 @@ import TodoListTutorial from './TodoListTutorial';
 import TextDisplay from './TextDisplay';
 import FetchDataFromAPI from './FetchDataFromAPI';
 import PredictAge from './PredictAge';
+import { Form } from './Form';
+import CustomHooks from './CustomHooks';
+import CountUsingCustomHooks from './CountUsingCustomHooks';
+import Accordion from './Accordion';
 
 const PlayGround = () => {
     const users = [
@@ -13,6 +17,12 @@ const PlayGround = () => {
         {name:"Albert",age:"23"}, 
         {name:"Tiffany",age:"29"}, 
     ];
+    // console.log("Hellio");
+    // let a = "Aditya";
+    // let b = a;
+    // b = "Raj";
+    // console.log(a, "a");
+    // console.log(b, "b");
   return (
     <div>
         {/* {users.map((user,key)=>{
@@ -22,7 +32,11 @@ const PlayGround = () => {
         {/* <TodoListTutorial/> */}
         {/* <TextDisplay/> */}
         {/* <FetchDataFromAPI/> */}
-        <PredictAge/>
+        {/* <PredictAge/> */}
+        {/* <Form/> */}
+        {/* <CustomHooks/> */}
+        {/* <CountUsingCustomHooks/> */}
+        <Accordion/>
     </div>
   )
 };
